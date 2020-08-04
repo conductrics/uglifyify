@@ -122,6 +122,13 @@ function mapArgv (opts) {
     opts.mangle = opts.m
     delete opts.m
   }
+	if (opts.mangle && opts.mangle.except {
+		opts.mangle.reserved = opts.mangle.except;
+		delete opts.mangle.except;
+	}
+	if (opts.ignore) {
+		delete opts.ignore;
+	}
   if (opts.p) {
     opts.parse = opts.p
     delete opts.p
